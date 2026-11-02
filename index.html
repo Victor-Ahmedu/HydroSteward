@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>HydroSteward dashboard</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%2314688A%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23062B45%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22dr%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FFFFFF%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%239FE8F5%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22s%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%22%20stop-color%3D%22%230E8FA8%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231FA36B%22%2F%3E%3C%2FlinearGradient%3E%3CclipPath%20id%3D%22c%22%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22100%22%20r%3D%22100%22%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3Cg%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22100%22%20r%3D%22100%22%20fill%3D%22url%28%23bg%29%22%2F%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22100%22%20r%3D%2291%22%20fill%3D%22none%22%20stroke%3D%22%237FE0F0%22%20stroke-width%3D%223%22%2F%3E%3Cg%20transform%3D%22translate%28100%20102%29%20scale%28.7%29%20translate%28-100%20-101%29%22%3E%3Cpath%20d%3D%22M100%208%20C100%208%2034%2080%2034%20128%20A66%2066%200%200%200%20166%20128%20C166%2080%20100%208%20100%208%20Z%22%20fill%3D%22url%28%23dr%29%22%2F%3E%3Crect%20x%3D%2252%22%20y%3D%2292%22%20width%3D%2215%22%20height%3D%2270%22%20rx%3D%227.5%22%20fill%3D%22%230A3552%22%2F%3E%3Crect%20x%3D%22133%22%20y%3D%2292%22%20width%3D%2215%22%20height%3D%2270%22%20rx%3D%227.5%22%20fill%3D%22%230A3552%22%2F%3E%3Crect%20x%3D%2260%22%20y%3D%22121%22%20width%3D%2280%22%20height%3D%2211%22%20rx%3D%225.5%22%20fill%3D%22%230A3552%22%2F%3E%3Cpath%20d%3D%22M116%20104%20C116%2088%2084%2088%2084%20112%20C84%20128%20116%20122%20116%20142%20C116%20162%2084%20162%2084%20146%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%2221%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M116%20104%20C116%2088%2084%2088%2084%20112%20C84%20128%20116%20122%20116%20142%20C116%20162%2084%20162%2084%20146%22%20fill%3D%22none%22%20stroke%3D%22url%28%23s%29%22%20stroke-width%3D%2213%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#EEF3F4;--ink:#10242B;--mute:#4F646B;--rule:#C3D2D6;--water:#1B6E8C;--save:#2B7A57;--warn:#8F5F00;--bad:#B42318;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -45,19 +46,21 @@ ul{list-style:none;margin:0;padding:0}
 .al.c{border-color:var(--bad)}
 .al strong{margin-right:8px}.al em{font-style:normal;color:var(--mute);font-size:.85rem}
 .al p{color:var(--mute);font-size:.92rem}
-table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px 10px 8px 0;border-bottom:1px solid var(--rule)}th{color:var(--mute);font-weight:400;font-size:.85rem}.tw{overflow-x:auto}td{vertical-align:top}ol{padding-left:20px}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px 10px 8px 0;border-bottom:1px solid var(--rule)}th{color:var(--mute);font-weight:400;font-size:.85rem}.top{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--rule);padding-bottom:14px;margin-bottom:18px}.brand{display:flex;align-items:center;gap:12px}.bn{font-size:1.45rem;font-weight:600;line-height:1.1}.bt{color:var(--mute);font-size:.85rem}.nav{display:flex;gap:6px 18px;flex-wrap:wrap}.nav a{color:var(--water);text-decoration:none;border-bottom:2px solid transparent;padding:4px 0}.nav a:hover,.nav a:focus-visible{border-color:var(--water)}
+.tw{overflow-x:auto}td{vertical-align:top}ol{padding-left:20px}
 .latest{border-left:6px solid var(--bad);padding:8px 14px;margin:10px 0;font-weight:600}.msg{border-left:4px solid var(--water);padding:2px 0 2px 12px;margin:12px 0}.msg.alert{border-color:var(--bad)}.msg.warning{border-color:var(--warn)}.msg strong{margin-right:8px}.msg span{color:var(--mute);font-size:.85rem}.msg p{color:var(--mute);font-size:.92rem}#feed{max-height:300px;overflow:auto}
 .note{color:var(--mute);font-size:.85rem;border-top:1px solid var(--rule);padding-top:14px;margin-top:8px}
 </style>
 </head>
 <body>
 <main>
+<header class="top"><div class="brand"><svg width="56" height="56" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14688A"/><stop offset="1" stop-color="#062B45"/></linearGradient><linearGradient id="dr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#9FE8F5"/></linearGradient><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E8FA8"/><stop offset="1" stop-color="#1FA36B"/></linearGradient><clipPath id="c"><circle cx="100" cy="100" r="100"/></clipPath></defs><g><circle cx="100" cy="100" r="100" fill="url(#bg)"/><circle cx="100" cy="100" r="91" fill="none" stroke="#7FE0F0" stroke-width="3"/><g transform="translate(100 102) scale(.7) translate(-100 -101)"><path d="M100 8 C100 8 34 80 34 128 A66 66 0 0 0 166 128 C166 80 100 8 100 8 Z" fill="url(#dr)"/><rect x="52" y="92" width="15" height="70" rx="7.5" fill="#0A3552"/><rect x="133" y="92" width="15" height="70" rx="7.5" fill="#0A3552"/><rect x="60" y="121" width="80" height="11" rx="5.5" fill="#0A3552"/><path d="M116 104 C116 88 84 88 84 112 C84 128 116 122 116 142 C116 162 84 162 84 146" fill="none" stroke="#fff" stroke-width="21" stroke-linecap="round"/><path d="M116 104 C116 88 84 88 84 112 C84 128 116 122 116 142 C116 162 84 162 84 146" fill="none" stroke="url(#s)" stroke-width="13" stroke-linecap="round"/></g></g></svg><div><div class="bn">HydroSteward</div><div class="bt">Watching over every drop</div></div></div><nav class="nav" aria-label="Sections"><a href="#messages">Messages</a><a href="#use">Water use</a><a href="#cooling">Cooling</a><a href="#incentives">Incentives</a><a href="#real">In real life</a></nav></header>
 <span class="tag">Simulated data: 30-day building scenario and 7-day cooling scenario</span>
 <h1 id="head"></h1>
 <p class="sub">HydroSteward watches water flow at a shared washroom block, flags waste, and closes the valve when a tap is left running.</p>
 <div class="fact"><p id="fact"></p><button id="next" type="button">Another fact</button></div>
 <section>
-<h2>Messages</h2>
+<h2 id="messages">Messages</h2>
 <div class="latest" id="latest" role="status"></div>
 <div class="bar-row"><span class="sub">Try a test incident:</span>
 <button type="button" id="t-tap">Tap left running</button>
@@ -72,7 +75,7 @@ table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px 10px
 <div class="cols">
 <div>
 <section>
-<h2>Water use</h2>
+<h2 id="use">Water use</h2>
 <p class="sub" id="trend"></p>
 <div class="bar-row" id="tabs">
 <button type="button" data-v="hourly" aria-pressed="false">Hourly</button>
@@ -103,7 +106,7 @@ table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px 10px
 </div>
 </div>
 <section>
-<h2>Data-center cooling</h2>
+<h2 id="cooling">Data-center cooling</h2>
 <p class="sub" id="cool-sum"></p>
 <div class="bar-row"><select id="cday" aria-label="Choose a cooling day"></select></div>
 <div id="cool"></div>
@@ -111,15 +114,23 @@ table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px 10px
 <p class="sub" id="cool-sens" style="margin-top:8px"></p>
 </section>
 <section>
-<h2>Blocks and incentives</h2>
+<h2 id="incentives">Blocks and incentives</h2>
 <p class="sub">Credits count litres saved by stopping losses. The score ranks blocks by how little water they lost: 100 minus 10 points for every 1% of water wasted.</p>
 <div class="tw"><table id="blocks"></table></div>
 <div class="bar-row"><span>Pledge from Block A credits:</span><span id="pl"></span></div>
 <p class="sub" id="pledge"></p>
 </section>
 <section>
-<h2>From simulation to a real site</h2>
+<h2 id="real">From simulation to a real site</h2>
 <p class="sub">What is simulated today, and what each part needs in a real building or data center.</p>
+<p style="margin-top:12px"><b>A day in the life of a hostel block</b></p>
+<ol>
+<li>03:00: water supply returns after an outage, and a tap that was left open starts to run.</li>
+<li>03:08: the controller sees flow stay high for 8 minutes, closes the valve, and sends an SMS to the caretaker. About 623 L is saved compared with a 90-minute run.</li>
+<li>Morning: the caretaker reopens the valve and fixes the tap. The dashboard logs the incident and the saving.</li>
+<li>Later in the month: the quietest half-hour of the night stays above normal on two days in a row. The system flags a leak, a person confirms it, and that line is isolated until it is repaired.</li>
+<li>Month end: the block report shows litres used, litres saved, and the responsible-use score.</li>
+</ol>
 <div class="tw"><table>
 <tr><th>Part</th><th>Today (simulated)</th><th>Real-world version</th></tr>
 <tr><td>Tap left running</td><td>Idle-flow rule, alarm after 8 minutes</td><td>Buildable now. A pulse flow sensor with a 1 to 30 L/min range covers a running tap (the common YF-S201 type is listed at about ±10% accuracy). A normally open valve with a manual override cuts the supply.</td></tr>
@@ -127,6 +138,14 @@ table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px 10px
 <tr><td>Messages</td><td>Shown on this page</td><td>A NodeMCU or ESP32 controller sends readings by Wi-Fi or mobile data to a cloud database, and alerts go out by SMS or email. The rules run on the device, so cut-off still works if the network drops.</td></tr>
 <tr><td>Data-center cooling</td><td>Forecast and plan from simulated load and weather</td><td>Read load and weather from the building management system and the make-up water meter. Start in advice-only mode, then move to automatic control after a safety review. Needs hybrid or dry coolers on site.</td></tr>
 <tr><td>Incentives</td><td>Simulated blocks, concept pledge</td><td>Per-block meters feed the score. The pledge needs a partner, such as a school or a water charity, to hold the fund.</td></tr>
+</table></div>
+<p style="margin-top:14px"><b>Adapting it to other sites</b></p>
+<div class="tw"><table>
+<tr><th>Site</th><th>What to measure</th><th>What it controls</th><th>What changes</th></tr>
+<tr><td>Hostel or residential block</td><td>Flow at the block inlet and at the washrooms</td><td>Valve on the washroom line</td><td>Learn the daily pattern from term-time data, and keep a separate baseline for holidays.</td></tr>
+<tr><td>School or clinic</td><td>Inlet flow, plus tank level where tanks are used</td><td>Valve on the supply to taps and tanks</td><td>Nights are quiet, so leaks stand out. Clinics need a manual override and no automatic cut-off to critical points.</td></tr>
+<tr><td>Office, hotel, or market</td><td>Inlet flow and flow per floor or zone</td><td>Zone valves</td><td>Larger flows need larger meters. Set the running-tap time from each zone own history.</td></tr>
+<tr><td>Data center</td><td>Make-up water, load, and outside temperature from the building system</td><td>Cooling mode setpoints, advice first</td><td>Needs hybrid or dry coolers. Savings follow the installed dry capacity (13% to 40% in the simulation).</td></tr>
 </table></div>
 <p style="margin-top:14px"><b>Pilot plan</b></p>
 <ol>
