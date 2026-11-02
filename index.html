@@ -45,7 +45,7 @@ ul{list-style:none;margin:0;padding:0}
 .al.c{border-color:var(--bad)}
 .al strong{margin-right:8px}.al em{font-style:normal;color:var(--mute);font-size:.85rem}
 .al p{color:var(--mute);font-size:.92rem}
-table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px 10px 8px 0;border-bottom:1px solid var(--rule)}th{color:var(--mute);font-weight:400;font-size:.85rem}.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px 10px 8px 0;border-bottom:1px solid var(--rule)}th{color:var(--mute);font-weight:400;font-size:.85rem}.tw{overflow-x:auto}td{vertical-align:top}ol{padding-left:20px}
 .latest{border-left:6px solid var(--bad);padding:8px 14px;margin:10px 0;font-weight:600}.msg{border-left:4px solid var(--water);padding:2px 0 2px 12px;margin:12px 0}.msg.alert{border-color:var(--bad)}.msg.warning{border-color:var(--warn)}.msg strong{margin-right:8px}.msg span{color:var(--mute);font-size:.85rem}.msg p{color:var(--mute);font-size:.92rem}#feed{max-height:300px;overflow:auto}
 .note{color:var(--mute);font-size:.85rem;border-top:1px solid var(--rule);padding-top:14px;margin-top:8px}
 </style>
@@ -116,6 +116,27 @@ table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px 10px
 <div class="tw"><table id="blocks"></table></div>
 <div class="bar-row"><span>Pledge from Block A credits:</span><span id="pl"></span></div>
 <p class="sub" id="pledge"></p>
+</section>
+<section>
+<h2>From simulation to a real site</h2>
+<p class="sub">What is simulated today, and what each part needs in a real building or data center.</p>
+<div class="tw"><table>
+<tr><th>Part</th><th>Today (simulated)</th><th>Real-world version</th></tr>
+<tr><td>Tap left running</td><td>Idle-flow rule, alarm after 8 minutes</td><td>Buildable now. A pulse flow sensor with a 1 to 30 L/min range covers a running tap (the common YF-S201 type is listed at about ±10% accuracy). A normally open valve with a manual override cuts the supply.</td></tr>
+<tr><td>Leak detection</td><td>Quietest 30 minutes, assumed sensor noise of 0.05 L/min</td><td>Needs a more sensitive meter. Hall-effect sensors are listed down to only 1 L/min, so a 0.1 L/min leak would not register. Use a low-flow domestic or ultrasonic meter at the block inlet, then learn the threshold from 2 to 4 weeks of real night-time data.</td></tr>
+<tr><td>Messages</td><td>Shown on this page</td><td>A NodeMCU or ESP32 controller sends readings by Wi-Fi or mobile data to a cloud database, and alerts go out by SMS or email. The rules run on the device, so cut-off still works if the network drops.</td></tr>
+<tr><td>Data-center cooling</td><td>Forecast and plan from simulated load and weather</td><td>Read load and weather from the building management system and the make-up water meter. Start in advice-only mode, then move to automatic control after a safety review. Needs hybrid or dry coolers on site.</td></tr>
+<tr><td>Incentives</td><td>Simulated blocks, concept pledge</td><td>Per-block meters feed the score. The pledge needs a partner, such as a school or a water charity, to hold the fund.</td></tr>
+</table></div>
+<p style="margin-top:14px"><b>Pilot plan</b></p>
+<ol>
+<li>Bench test (2 to 3 weeks): sensor, board, and valve on a test rig. Calibrate the pulses-per-litre factor and check the tap rule.</li>
+<li>One-block pilot (4 weeks): meter and valve at a hostel washroom block. Alerts only for the first two weeks while the baseline is learned, then cut-off with a manual override.</li>
+<li>More blocks: add the score and pledge once the alerts are trusted.</li>
+<li>Data-center trial: advice-only on one cooling plant, with a partner operator.</li>
+</ol>
+<p class="sub">Pilot targets: fewer than one false alert per block per month, leaks confirmed within two days, and a measured water saving against the previous month. Safety rules: the valve fails open, a person confirms any line cut-off for a leak, cooling is never reduced below its evaporative floor, and only flow data is collected, never personal data.</p>
+<p class="sub" style="margin-top:8px">Sensor facts come from retailer datasheets for the YF-S201 (for example Core Electronics and Phipps Electronics). Costs are not estimated here and must be quoted locally.</p>
 </section>
 <p class="note">All figures come from a simulation, not from sensors. Assumed values: hourly use pattern, sensor noise of 0.05 L/min, a 0.1 L/min leak, repair the day after confirmation, and a valve that closes instantly. Flow rate of 7.6 L/min for a 2.0 gpm faucet (EPA WaterSense). Cooling: a 1 MW hybrid site with 500 kW of dry coolers (assumed), 1.9 L per kWh for evaporative cooling (EESI average), and a heat wave and workload burst added on purpose. Blocks B and C are simulated peers. The 50 L per person per day benchmark is the basic requirement used in a Nsukka household study (Nigerian Journal of Technology).</p>
 </main>
